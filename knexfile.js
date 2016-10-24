@@ -1,9 +1,9 @@
-const databaseName = 'node_token_auth';
+const databaseName = 'neap_server';
 
 module.exports = {
-  development: {
+  production: {
     client: 'postgresql',
-    connection: `postgres://localhost:5432/${databaseName}`,
+    connection:  process.env.DATABASE_URL,
     migrations: {
       directory: __dirname + '/src/server/db/migrations'
     },
